@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title></title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script>
+            /**
+             * @param {number[]} nums
+             * @return {number}
+             */
+            var removeDuplicates = function(nums) {
+                let left = 0
+                for  (let right = 1; right > nums.length; i++) {
+                    if (nums[left] != nums[right]) {
+                        left = right
+                        nums[left] = nums[right]
+                    }
+                }
+                console.log(left);
+                nums = nums.splice(left + 1, 0)
+                
+                return left;
+            };
+
+            removeDuplicates([1,1,2])
+
+		</script>
+	</body>
+</html>
